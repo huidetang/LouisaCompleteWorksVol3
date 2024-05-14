@@ -1,0 +1,188 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build books.
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # reviewdog-github-check:
+  #   name: reviewdog (github-check)
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #       #reviewdogのアクション
+  #     - uses: reviewdog/action-setup@v1
+  #       with:
+  #         reviewdog_version: latest
+
+  #       #textlintを動かすためのnodeアクション
+  #     - uses: actions/setup-node@v3
+
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         submodules: recursive
+
+  #     - name: cache-node-modules
+  #       #stepsが失敗(文章の乱れ)した場合でもcacheを取得するようにする
+  #       uses: pat-s/always-upload-cache@v2.1.3
+  #       env:
+  #         cache-name: cache-node-modules
+  #       with:
+  #         path: ~/.npm
+  #         key: node-${{ hashFiles('**/package-lock.json') }}
+  #         restore-keys: |
+  #           node-
+
+  #     - name: Install textlint
+  #       run:  'npm install --save-dev textlint textlint-rule-preset-smarthr textlint-rule-prh textlint-plugin-review'
+      
+  #     - name: Install dependent module
+  #       run: npm install
+
+  #     - name: Execute textlint
+  #       env:
+  #         REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: |
+  #         npx textlint -f checkstyle chapter/*.re wiki/*.md README.md \
+  #         | reviewdog -f=checkstyle -name="textlint" -diff="git diff ${{ github.event.pull_request.base.ref }}" -reporter=github-pr-review -level="error"
+
+  paper:
+    # needs: reviewdog-github-check
+    name: Make PDF for Paper
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/huideyeren/review-docker:main
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Install gems.
+        run: bundle install
+      - name: Copy plantuml.
+        run: cp /java/plantuml.jar .
+      - name: Check tools
+        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+      - name: convert PlantUML
+        run: pwd | bash ./plantuml.sh >> .plantuml.log
+      - name: Show .plantuml.log
+        run: cat .plantuml.log
+      - name: Convert SVG to PDF
+        run: pwd | python3 svg.py >> .svg.log
+      - name: Show .svg.log
+        run: cat .svg.log
+      - name: Grayscaling images.
+        run: pwd | python3 grayscaling.py >> .grayscaling.log
+      - name: Show .grayscaling.log
+        run: cat .grayscaling.log
+      - name: Build PDF.
+        run: REVIEW_CONFIG_FILE=config-print-pdf.yml bundle exec rake pdf
+      - name: Upload artifact.
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-print-pdf.pdf
+          path: book-print-pdf.pdf
+  pdf-ebook:
+    # needs: reviewdog-github-check
+    name: Make PDF for Ebook
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/huideyeren/review-docker:main
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Install gems.
+        run: bundle install
+      - name: Copy plantuml.
+        run: cp /java/plantuml.jar .
+      - name: Check tools
+        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+      - name: convert PlantUML
+        run: pwd | bash ./plantuml.sh >> .plantuml.log
+      - name: Show .plantuml.log
+        run: cat .plantuml.log
+      - name: Convert SVG to PDF
+        run: pwd | python3 svg.py >> .svg.log
+      - name: Show .svg.log
+        run: cat .svg.log
+      - name: Build PDF.
+        run: REVIEW_CONFIG_FILE=config-ebook-pdf.yml bundle exec rake pdf
+      - name: Upload artifact.
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-pdf-ebook.pdf
+          path: book-pdf-ebook.pdf
+  epub:
+    # needs: reviewdog-github-check
+    name: Make EPUB
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/huideyeren/review-docker:main
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Install gems.
+        run: bundle install
+      - name: Copy plantuml.
+        run: cp /java/plantuml.jar .
+      - name: Check tools
+        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+      - name: convert PlantUML
+        run: pwd | bash ./plantuml.sh >> .plantuml.log
+      - name: Show .plantuml.log
+        run: cat .plantuml.log
+      - name: Build EPUB.
+        run: REVIEW_CONFIG_FILE=config-epub.yml bundle exec rake epub
+      - name: Upload artifact.
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-epub.epub
+          path: book-epub.epub
+  vivliostyle:
+    # needs: reviewdog-github-check
+    name: Make PDF at Vivliostyle
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/huideyeren/review-docker:main
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Install libgbm-dev.
+        run: sudo apt-get install -y libgbm-dev poppler-utils
+      - name: Install Node Package.
+        run: npm install
+      - name: Compile SCSS.
+        run: npm run style
+      - name: Install gems.
+        run: bundle install
+      - name: Copy plantuml.
+        run: cp /java/plantuml.jar .
+      - name: Check tools
+        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+      - name: convert PlantUML
+        run: pwd | bash ./plantuml.sh >> .plantuml.log
+      - name: Show .plantuml.log
+        run: cat .plantuml.log
+      - name: Grayscaling images.
+        run: pwd | python3 grayscaling.py >> .grayscaling.log
+      - name: Show .grayscaling.log
+        run: cat .grayscaling.log
+      - name: Build PDF.
+        run: REVIEW_CONFIG_FILE=config-vivliostyle.yml bundle exec rake vivliostyle
+      - name: Upload artifact.
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-vivliostyle.pdf
+          path: book.pdf
+        

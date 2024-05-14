@@ -1,0 +1,74 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.2)
+    eim_xml (0.0.4)
+    image_size (3.3.0)
+    json (2.7.0)
+    language_server-protocol (3.17.0.3)
+    math_ml (0.14)
+      eim_xml
+    mecab (0.996)
+    nokogiri (1.15.5-arm64-darwin)
+      racc (~> 1.4)
+    pandoc2review (2.0.0)
+      unicode-eaw
+    parallel (1.23.0)
+    parser (3.2.2.4)
+      ast (~> 2.4.1)
+      racc
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    psych (5.1.1.1)
+      stringio
+    racc (1.7.3)
+    rainbow (3.1.1)
+    rake (13.1.0)
+    regexp_parser (2.8.3)
+    review (5.8.0)
+      image_size
+      rexml
+      rouge
+      rubyzip
+      tty-logger
+    rexml (3.2.6)
+    rouge (4.2.0)
+    rubocop (1.58.0)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.2.2.4)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.30.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.30.0)
+      parser (>= 3.2.1.0)
+    ruby-progressbar (1.13.0)
+    rubyzip (2.3.2)
+    stringio (3.1.0)
+    tty-color (0.6.0)
+    tty-logger (0.6.0)
+      pastel (~> 0.8)
+    unicode-display_width (2.5.0)
+    unicode-eaw (2.2.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  math_ml
+  mecab
+  nokogiri
+  pandoc2review
+  psych
+  rake
+  review
+  rexml
+  rubocop
+  rubyzip
+
+BUNDLED WITH
+   2.3.7
