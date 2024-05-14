@@ -2,17 +2,16 @@ PREDEF:
   - preface.re
 
 CHAPS:
-  - ReVIEW独自マークアップ言語:
-    - test.re
-  - Markdown:
-    - markdown.re
-  - Microsoft word:
-    - word-ref.re
-    - custom-reference.re
+  - are.re
+  - tsugaru.re
+  - one-year-period.re
+  - watashi-no-yume.re
+  - fuyu-no-shukusai.re
+  - eien-no-kioku.re
+  - futatabi-no-manabiya.re
+  - kikyo.re
 
 APPENDIX:
 
 POSTDEF:
   - postscript.re
-  - bib.re
-
