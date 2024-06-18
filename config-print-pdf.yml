@@ -1,4 +1,4 @@
 inherit: ["config.yml"]
 bookname: book-print-pdf
 # prt: ねこのしっぽ
-texdocumentclass: ["review-jlreq", "media=print,paper=b6,fontsize=8pt,serial_pagination=true,hiddenfolio=shippo,startpage=3,tate,twoside,onecolumn,openany"]
+texdocumentclass: ["review-jlreq", "media=print,paper=a6,fontsize=8pt,serial_pagination=true,hiddenfolio=shippo,startpage=3,tate,twoside,onecolumn,openany"]

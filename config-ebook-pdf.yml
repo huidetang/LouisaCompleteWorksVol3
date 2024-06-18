@@ -3,6 +3,6 @@ page_metric: A5
 # catalogfile: catalog-download.yml
 # backcover: backcover.tex
 bookname: book-pdf-ebook
-texdocumentclass: ["review-jlreq", "media=ebook,paper=a5,fontsize=10pt,serial_pagination=true,tate,twoside,onecolumn"]
+texdocumentclass: ["review-jlreq", "media=ebook,paper=a6,fontsize=10pt,serial_pagination=true,tate,twoside,onecolumn"]
 # pdfmaker:
 #   coverimage: c103frontcover.pdf
