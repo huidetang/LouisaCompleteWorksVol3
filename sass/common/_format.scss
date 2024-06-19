@@ -49,7 +49,9 @@ html {
     /* 隠しノンブル */
     font-size: 4pt;
     margin-right: -19mm !important;
-    text-align: start !important;
+    padding: 2px;
+    white-space: pre;
+    writing-mode: horizontal-tb;
     content: counter(page);
   }
 }
@@ -73,7 +75,9 @@ html {
     /* 隠しノンブル */
     font-size: 4pt;
     margin-left: -19mm !important;
-    align-items: end !important;
+    padding: 2px;
+    white-space: pre;
+    writing-mode: horizontal-tb;
     content: counter(page);
   }
 }
