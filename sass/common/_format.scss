@@ -16,6 +16,8 @@ html {
 /* タイトル文字列セット */
 .title {
   string-set: title content();
+  font-size: 2rem;
+  writing-mode: horizontal-tb;
 }
 
 @page {
