@@ -30,9 +30,9 @@ $paper-height: 148mm;
 $marks: crop;
 
 //コンテンツの横幅
-$content-width: $base-line-height * $lines;
+$content-width: $paper-width - $koguchi - $nodo;
 //コンテンツの縦幅
-$content-height: $base-font-size * $characters-per-line;
+$content-height: $paper-height - $ten - $chi;
 
 // ページのスタイル定義
 @import 'common/format';

@@ -48,7 +48,7 @@ html {
   @right-middle {
     /* 隠しノンブル */
     font-size: 4pt;
-    margin-right: -3mm !important;
+    margin-right: -19mm !important;
     text-align: start !important;
     content: counter(page);
   }
@@ -72,7 +72,7 @@ html {
   @left-middle {
     /* 隠しノンブル */
     font-size: 4pt;
-    margin-left: -3mm !important;
+    margin-left: -19mm !important;
     align-items: end !important;
     content: counter(page);
   }
