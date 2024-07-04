@@ -126,5 +126,5 @@
 
 その数日後、私はテレビの画面に映る己の姿を見てただ恐れおののくことしかできなかったが、それは別のお話。
 
-//indepimage[are_dotonbori]{
+//indepimage[are_dotonbori][][scale=0.7]{
 //}

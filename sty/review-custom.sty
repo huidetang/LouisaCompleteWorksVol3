@@ -67,16 +67,16 @@
               \begin{center}
                 \niceframe{%
                   \mbox{}%
-                  \vskip5\zw
+                  \vskip2\zw
                   %\reviewtitlefont%
-                  {\Huge\review@booktitlename\par}%
+                  {\huge\review@booktitlename\par}%
                   \ifdefined\review@subtitlename
                     \vskip 1em%
                     {\Large\review@subtitlename\par}%
                   \fi
-                  \vskip 15em%
+                  \vskip 3em%
                   \begin{center}
-                    {\large
+                    {\Large
                       \lineskip .75em
                       \begin{center}
                         \review@titlepageauthors
@@ -84,7 +84,7 @@
                       \par
                     }%
                   \end{center}
-                  \vskip 5em%
+                  \vskip 3em%
                 }
               \end{center}
             \end{minipage}
@@ -95,11 +95,10 @@
                 {\large\review@date \review@intn@edition%
                   \hspace{2\zw}%
                   \review@intn@publishedby\par}%
-                \vskip4\zw\mbox{}
+                \vskip2\zw\mbox{}
               \end{center}
             \end{minipage}
         \end{titlepage}
-        \clearpage
       \else% 横書き大扉
         \begin{titlepage}
         \thispagestyle{empty}
@@ -121,7 +120,6 @@
         \end{tabular}\par}%
         \vfill
         {\large\review@date \review@intn@edition%
-          \hspace{2\zw}%
           \review@intn@publishedby\par}%
         \vskip4\zw\mbox{}
         \end{center}%
