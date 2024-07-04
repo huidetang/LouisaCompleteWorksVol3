@@ -2,10 +2,14 @@ inherit: ["config.yml"]
 page_metric: A5
 # catalogfile: catalog-download.yml
 cover: cover.tex
-title: title.tex
+titlefile: title.tex
 colophon: colophon.tex
 backcover: backcover.tex
 bookname: book-pdf-ebook
-texdocumentclass: ["review-jlreq", "media=ebook,paper=a6,fontsize=10pt,serial_pagination=true,tate,twoside,onecolumn"]
+booktitle: "並行現実小説集 第3巻"
+subtitle: "2023年秋〜2024年年始"
+history: [["2024-08-03"]]
+rights: (C) 2024 井の頭文芸部
+texdocumentclass: ["review-jlreq", "media=ebook,paper=a6,fontsize=8pt,serial_pagination=true,tate,twoside,onecolumn"]
 # pdfmaker:
 #   coverimage: c103frontcover.pdf

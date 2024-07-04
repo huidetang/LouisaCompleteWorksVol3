@@ -1,6 +1,10 @@
 inherit: ["config.yml"]
 bookname: book-print-pdf
-# prt: ねこのしっぽ
-title: title.tex
+booktitle: "並行現実小説集 第3巻"
+subtitle: "2023年秋〜2024年年始"
+history: [["2024-08-03"]]
+rights: (C) 2024 井の頭文芸部
+prt: ねこのしっぽ
+titlefile: title.tex
 colophon: colophon.tex
 texdocumentclass: ["review-jlreq", "media=print,paper=a6,fontsize=8pt,serial_pagination=true,hiddenfolio=shippo,startpage=3,tate,twoside,onecolumn,openany"]
