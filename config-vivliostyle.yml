@@ -1,9 +1,9 @@
 inherit: ["config.yml"]
 stylesheet: vivliostyle-a6.css
-titlefile: title.png
+titlefile: images/title.png
 cover: null
 coverimage: null
-colophon: colophon.png
+colophon: images/colophon.png
 # catalogfile: catalog.yml
 bookname: book
 highlight:
