@@ -91,7 +91,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-print-pdf.pdf
+          name: book-print-pdf_${{ env.CURRENT_DATETIME }}.pdf
           path: book-print-pdf.pdf
   pdf-ebook:
     # needs: reviewdog-github-check
@@ -121,7 +121,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-pdf-ebook.pdf
+          name: book-pdf-ebook_${{ env.CURRENT_DATETIME }}.pdf
           path: book-pdf-ebook.pdf
   epub:
     # needs: reviewdog-github-check
@@ -147,7 +147,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-epub.epub
+          name: book-epub_${{ env.CURRENT_DATETIME }}.epub
           path: book-epub.epub
   vivliostyle:
     # needs: reviewdog-github-check
@@ -183,6 +183,6 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-vivliostyle.pdf
+          name: book-vivliostyle_${{ env.CURRENT_DATETIME }}.pdf
           path: book.pdf
         
