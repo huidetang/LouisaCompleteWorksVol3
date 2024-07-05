@@ -3,7 +3,8 @@ page_metric: A5
 # catalogfile: catalog-download.yml
 cover: cover.tex
 titlefile: title.tex
-colophon: colophon.tex
+pdfmaker:
+  colophon: colophon.tex
 backcover: backcover.tex
 bookname: book-pdf-ebook
 booktitle: "並行現実小説集 第3巻"
