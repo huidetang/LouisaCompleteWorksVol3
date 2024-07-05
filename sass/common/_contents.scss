@@ -36,23 +36,23 @@ figure > img[src$='.jpeg'] {
   image-resolution: 350dpi;
 }
 
-p > img, div > img {
+p > img, div > img, section > img {
   width: auto;
   max-width: $content-width;
   max-height: $content-height;
 }
 
 /* 奥付 */
-.colophon {
-  font-size: 7pt;
-  // 3行空け
-  margin-block-start: $base-line-height * 3;
+// .colophon {
+//   font-size: 7pt;
+//   // 3行空け
+//   margin-block-start: $base-line-height * 3;
 
-  p {
-    text-indent: 0;
-    hanging-punctuation: none;
-  }
-}
+//   p {
+//     text-indent: 0;
+//     hanging-punctuation: none;
+//   }
+// }
 
 /* 改ページ */
 .page-break {
@@ -86,13 +86,7 @@ p > img, div > img {
 }
 
 /* 表紙 */
-.cover, .title, .backcover {
-  margin: 0 !important;
-  img {
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-  }
-}
+
 
 /* 3行あける */
 .line-03 {
@@ -114,9 +108,11 @@ div.note, div.memo, div.tip, div.info, div.warning, div.important, div.caution, 
 }
 
 img.max {
-  margin: 0;
-  width: 100%;
-  height: 100vh;
+  margin: 0 !important;
+  max-width: 100vw;
+  width: auto;
+  max-height: 100vh;
+  height: auto;
 }
 
 pre {

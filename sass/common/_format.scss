@@ -83,7 +83,10 @@ html {
 }
 
 @page cover {
-  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 
   @top-left {
     content: none;
@@ -107,7 +110,10 @@ html {
 }
 
 @page title {
-  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 
   @top-left {
     content: none;
@@ -144,10 +150,23 @@ html {
 }
 
 @page colophon {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+
   @top-left {
     content: none;
   }
   @top-right {
+    content: none;
+  }
+
+  @right-middle {
+    content: none;
+  }
+
+  @left-middle {
     content: none;
   }
 }
@@ -157,7 +176,10 @@ html {
 }
 
 @page backcover {
-  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 
   @top-left {
     content: none;
