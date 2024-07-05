@@ -1,6 +1,5 @@
 inherit: ["config.yml"]
 stylesheet: vivliostyle-a6.css
-cover: true
 coverimage: title.png
 titlepage: false
 titlefile: null
