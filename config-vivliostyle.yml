@@ -1,7 +1,7 @@
 inherit: ["config.yml"]
 stylesheet: vivliostyle-a6.css
-cover: null
-coverimage: cover.xhtml
+cover: cover.xhtml
+# coverimage: null
 titlepage: false
 # titlefile: title.xhtml
 colophon: colophon.xhtml
