@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 @page {
-    size: 1447px 2039px;
+    size: 105mm 148mm;
     width: 1447px;
     height: 2039px;
     margin: 0;
+    padding: 0;
     marks: crop;
 }
 

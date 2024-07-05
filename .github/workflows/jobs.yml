@@ -107,7 +107,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-print-pdf_${{ env.CURRENT_DATETIME }}.pdf
+          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'pdf-paper', env.CURRENT_DATETIME) }}
           path: book-print-pdf.pdf
   pdf-ebook:
     # needs: reviewdog-github-check
@@ -138,7 +138,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-pdf-ebook_${{ env.CURRENT_DATETIME }}.pdf
+          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'pdf-ebook', env.CURRENT_DATETIME) }}
           path: book-pdf-ebook.pdf
   epub:
     # needs: reviewdog-github-check
@@ -165,7 +165,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-epub_${{ env.CURRENT_DATETIME }}.pdf
+          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'epub', env.CURRENT_DATETIME) }}
           path: book-epub.epub
   vivliostyle:
     # needs: reviewdog-github-check
@@ -202,6 +202,6 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-vivliostyle_${{ env.CURRENT_DATETIME }}.pdf
+          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'vivliostyle', env.CURRENT_DATETIME) }}
           path: book.pdf
         
