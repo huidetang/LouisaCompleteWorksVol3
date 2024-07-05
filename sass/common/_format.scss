@@ -52,8 +52,27 @@ html {
   }
 }
 
-@page :first { margin: 0 !important; }
-@page :last { margin: 0 !important; }
+@page :first { 
+  margin: 0 !important;
+
+  @top-left {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
+
+@page :last {
+  @top-left {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
 
 @page :right {
 
@@ -81,69 +100,69 @@ html {
   }
 }
 
-/* 表紙ページ */
-.cover {
-  page: cover;
-}
+// /* 表紙ページ */
+// .cover {
+//   page: cover;
+// }
 
-@page cover {
-  size: $paper-size;
-  bleed: $bleed-size;
-  width: $paper-width;
-  height: $paper-height;
-  marks: $marks;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+// @page cover {
+//   size: $paper-size;
+//   bleed: $bleed-size;
+//   width: $paper-width;
+//   height: $paper-height;
+//   marks: $marks;
+//   margin-top: 0 !important;
+//   margin-bottom: 0 !important;
+//   margin-right: 0 !important;
+//   margin-left: 0 !important;
 
-  @top-left {
-    content: none;
-  }
+//   @top-left {
+//     content: none;
+//   }
 
-  @top-right {
-    content: none;
-  }
+//   @top-right {
+//     content: none;
+//   }
 
-  @right-middle {
-    content: none;
-  }
+//   @right-middle {
+//     content: none;
+//   }
 
-  @left-middle {
-    content: none;
-  }
-}
+//   @left-middle {
+//     content: none;
+//   }
+// }
 
-.title {
-  page: title;
-}
+// .title {
+//   page: title;
+// }
 
-@page title {
-  size: $paper-size;
-  bleed: $bleed-size;
-  width: $paper-width;
-  height: $paper-height;
-  marks: $marks;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+// @page title {
+//   size: $paper-size;
+//   bleed: $bleed-size;
+//   width: $paper-width;
+//   height: $paper-height;
+//   marks: $marks;
+//   margin-top: 0 !important;
+//   margin-bottom: 0 !important;
+//   margin-right: 0 !important;
+//   margin-left: 0 !important;
 
-  @top-left {
-    content: none;
-  }
-  @top-right {
-    content: none;
-  }
+//   @top-left {
+//     content: none;
+//   }
+//   @top-right {
+//     content: none;
+//   }
 
-  @right-middle {
-    content: none;
-  }
+//   @right-middle {
+//     content: none;
+//   }
 
-  @left-middle {
-    content: none;
-  }
-}
+//   @left-middle {
+//     content: none;
+//   }
+// }
 
 /* 目次ページ */
 .toc {
@@ -159,67 +178,67 @@ html {
   }
 }
 
-.colophon {
-  page: colophon;
-}
+// .colophon {
+//   page: colophon;
+// }
 
-@page colophon {
-  size: $paper-size;
-  width: $paper-width;
-  height: $paper-height;
-  marks: $marks;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+// @page colophon {
+//   size: $paper-size;
+//   width: $paper-width;
+//   height: $paper-height;
+//   marks: $marks;
+//   margin-top: 0 !important;
+//   margin-bottom: 0 !important;
+//   margin-right: 0 !important;
+//   margin-left: 0 !important;
 
-  @top-left {
-    content: none;
-  }
-  @top-right {
-    content: none;
-  }
+//   @top-left {
+//     content: none;
+//   }
+//   @top-right {
+//     content: none;
+//   }
 
-  @right-middle {
-    content: none;
-  }
+//   @right-middle {
+//     content: none;
+//   }
 
-  @left-middle {
-    content: none;
-  }
-}
+//   @left-middle {
+//     content: none;
+//   }
+// }
 
-.backcover {
-  page: backcover;
-}
+// .backcover {
+//   page: backcover;
+// }
 
-@page backcover {
-  size: $paper-size;
-  bleed: $bleed-size;
-  width: $paper-width;
-  height: $paper-height;
-  marks: $marks;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+// @page backcover {
+//   size: $paper-size;
+//   bleed: $bleed-size;
+//   width: $paper-width;
+//   height: $paper-height;
+//   marks: $marks;
+//   margin-top: 0 !important;
+//   margin-bottom: 0 !important;
+//   margin-right: 0 !important;
+//   margin-left: 0 !important;
 
-  @top-left {
-    content: none;
-  }
+//   @top-left {
+//     content: none;
+//   }
   
-  @top-right {
-    content: none;
-  }
+//   @top-right {
+//     content: none;
+//   }
 
-  @right-middle {
-    content: none;
-  }
+//   @right-middle {
+//     content: none;
+//   }
 
-  @left-middle {
-    content: none;
-  }
-}
+//   @left-middle {
+//     content: none;
+//   }
+// }
 
 @media print {
   .cover {
