@@ -1,10 +1,11 @@
 inherit: ["config.yml"]
 stylesheet: vivliostyle-a6.css
-coverimage: title.png
-titlepage: false
-titlefile: null
-colophon: null
-backcover: colophon.png
+cover: null
+coverimage: null
+titlepage: true
+titlefile: title.xhtml
+colophon: colophon.xhtml
+backcover: null
 # catalogfile: catalog.yml
 bookname: book
 booktitle: "並行現実小説集　第３巻"
