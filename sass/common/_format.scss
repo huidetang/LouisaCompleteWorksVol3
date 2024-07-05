@@ -83,11 +83,12 @@ html {
 }
 
 @page cover {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+
   @top-left {
     content: none;
   }
+
   @top-right {
     content: none;
   }
@@ -106,10 +107,8 @@ html {
 }
 
 @page title {
-  margin-top: 0;
-  margin-left: 0;
-  margin-bottom: 0;
-  margin-right: 0;
+  margin: 0 !important;
+
   @top-left {
     content: none;
   }
@@ -158,11 +157,12 @@ html {
 }
 
 @page backcover {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+
   @top-left {
     content: none;
   }
+  
   @top-right {
     content: none;
   }
