@@ -43,16 +43,16 @@ p > img, div > img {
 }
 
 /* 奥付 */
-// .colophon {
-//   // font-size: 7pt;
-//   // // 3行空け
-//   // margin-block-start: $base-line-height * 3;
+.colophon {
+  font-size: 7pt;
+  // 3行空け
+  margin-block-start: $base-line-height * 3;
 
-//   // p {
-//   //   text-indent: 0;
-//   //   hanging-punctuation: none;
-//   // }
-// }
+  p {
+    text-indent: 0;
+    hanging-punctuation: none;
+  }
+}
 
 /* 改ページ */
 .page-break {
@@ -86,7 +86,7 @@ p > img, div > img {
 }
 
 /* 表紙 */
-.cover, .title, .colophon, .backcover {
+.cover, .title, .backcover {
   img {
     image-resolution: 350dpi;
     display: block;

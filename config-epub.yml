@@ -1,8 +1,8 @@
 inherit: ["config.yml"]
 # catalogfile: catalog-download.yml
 bookname: book-epub
-cover: cover.xhtml
+cover: true
+coverimage: cover.png
 titlepage: true
-titlefile: title.xhtml
-colophon: colophon.xhtml
-backcover: backcover.xhtml
+colophon: true
+backcover: backcover.png

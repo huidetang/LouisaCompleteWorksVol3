@@ -143,11 +143,22 @@ html {
 }
 
 @page colophon {
-  margin: 0;
-  padding: 0;
+  size: $paper-width $paper-height;
+  // 行送り * 行数
+  width: $content-width;
+  // フォントサイズ * 文字数
+  height: $content-height;
+  // margin: auto;
+  margin-top: $ten;
+  margin-bottom: $chi;
+  margin-right: $nodo;
+  margin-left: $nodo;
+  marks: $marks;
+
   @top-left {
     content: none;
   }
+  
   @top-right {
     content: none;
   }
