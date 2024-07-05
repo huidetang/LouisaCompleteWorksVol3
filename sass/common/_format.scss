@@ -85,31 +85,11 @@ html {
 @page :first {
   margin: 0;
   padding: 0;
-
-  @left-middle {
-    /* 隠しノンブル */
-    font-size: 4pt;
-    margin-left: -19mm !important;
-    padding: 2px;
-    white-space: pre;
-    writing-mode: horizontal-tb;
-    content: counter(page);
-  }
 }
 
 @page :last {
   margin: 0;
   padding: 0;
-
-  @right-middle {
-    /* 隠しノンブル */
-    font-size: 4pt;
-    margin-right: -19mm !important;
-    padding: 2px;
-    white-space: pre;
-    writing-mode: horizontal-tb;
-    content: counter(page);
-  }
 }
 
 /* 表紙ページ */

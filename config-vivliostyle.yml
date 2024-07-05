@@ -1,9 +1,8 @@
 inherit: ["config.yml"]
 stylesheet: vivliostyle-a6.css
-cover: false
-coverimage: null
-titlepage: true
-titlefile: title.xhtml
+coverimage: title.png
+titlepage: false
+titlefile: null
 colophon: colophon.xhtml
 backcover: null
 # catalogfile: catalog.yml
