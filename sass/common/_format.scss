@@ -83,13 +83,25 @@ html {
 }
 
 @page :first {
+  size: $paper-width $paper-height;
+  // 行送り * 行数
+  width: $paper-width;
+  // フォントサイズ * 文字数
+  height: $paper-height;
   margin: 0;
   padding: 0;
+  marks: $marks;
 }
 
 @page :last {
+  size: $paper-width $paper-height;
+  // 行送り * 行数
+  width: $paper-width;
+  // フォントサイズ * 文字数
+  height: $paper-height;
   margin: 0;
   padding: 0;
+  marks: $marks;
 }
 
 /* 表紙ページ */
