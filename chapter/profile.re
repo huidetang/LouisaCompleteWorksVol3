@@ -1,8 +1,5 @@
 = 著者紹介
 
-//indepimage[louisa][][scale=0.2]{
-//}
-
 //noindent
 るいざ・しゃーろっと@<br>{}@<br>{}
 
