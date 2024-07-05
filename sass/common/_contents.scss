@@ -33,7 +33,7 @@ figcaption {
 figure > img[src$='.png'],
 figure > img[src$='.jpg'],
 figure > img[src$='.jpeg'] {
-  image-resolution: 300dpi;
+  image-resolution: 350dpi;
 }
 
 p > img, div > img {
@@ -43,22 +43,16 @@ p > img, div > img {
 }
 
 /* 奥付 */
-.colophon {
-  // font-size: 7pt;
-  // // 3行空け
-  // margin-block-start: $base-line-height * 3;
+// .colophon {
+//   // font-size: 7pt;
+//   // // 3行空け
+//   // margin-block-start: $base-line-height * 3;
 
-  // p {
-  //   text-indent: 0;
-  //   hanging-punctuation: none;
-  // }
-  img {
-    display: block;
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-  }
-}
+//   // p {
+//   //   text-indent: 0;
+//   //   hanging-punctuation: none;
+//   // }
+// }
 
 /* 改ページ */
 .page-break {
@@ -92,10 +86,12 @@ p > img, div > img {
 }
 
 /* 表紙 */
-.cover, .title, .backcover {
+.cover, .title, .colophon, .backcover {
   img {
+    image-resolution: 350dpi;
     display: block;
     margin: 0;
+    padding: 0;
     max-width: 100%;
     height: auto;
   }
