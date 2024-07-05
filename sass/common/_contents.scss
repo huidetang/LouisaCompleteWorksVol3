@@ -8,6 +8,10 @@
   text-align: end;
 }
 
+img {
+  image-resolution: 350dpi;
+}
+
 /* 画像＋キャプション */
 figure {
   float-reference: page;
@@ -33,7 +37,7 @@ figcaption {
 figure > img[src$='.png'],
 figure > img[src$='.jpg'],
 figure > img[src$='.jpeg'] {
-  image-resolution: 350dpi;
+  // image-resolution: 350dpi;
 }
 
 p > img, div > img, section > img {
@@ -43,25 +47,25 @@ p > img, div > img, section > img {
 }
 
 /* 奥付 */
-// .colophon {
-//   font-size: 7pt;
-//   // 3行空け
-//   margin-block-start: $base-line-height * 3;
+.colophon {
+  font-size: 7pt;
+  // 3行空け
+  margin-block-start: $base-line-height * 3;
 
-//   p {
-//     text-indent: 0;
-//     hanging-punctuation: none;
-//   }
-// }
+  p {
+    text-indent: 0;
+    hanging-punctuation: none;
+  }
+}
 
 /* 改ページ */
 .page-break {
   page-break-after: always !important;
 }
 
-// .colophon.page-break {
-//   margin-right: 0;
-// }
+.colophon.page-break {
+  margin-right: 0;
+}
 
 /* 2字下げ */
 .indent-double {
