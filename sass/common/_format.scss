@@ -13,11 +13,6 @@ html {
   padding: 0;
 }
 
-/* タイトル文字列セット */
-.title {
-  string-set: title content();
-}
-
 @page {
   size: $paper-width $paper-height;
   // 行送り * 行数
@@ -82,38 +77,49 @@ html {
   }
 }
 
-@page :first {
-  size: $paper-width $paper-height;
-  // 行送り * 行数
-  width: $paper-width;
-  // フォントサイズ * 文字数
-  height: $paper-height;
-  margin: 0;
-  padding: 0;
-  marks: $marks;
-}
-
-@page :last {
-  size: $paper-width $paper-height;
-  // 行送り * 行数
-  width: $paper-width;
-  // フォントサイズ * 文字数
-  height: $paper-height;
-  margin: 0;
-  padding: 0;
-  marks: $marks;
-}
-
 /* 表紙ページ */
 .cover {
   page: cover;
 }
 
 @page cover {
+  margin: 0;
+  padding: 0;
   @top-left {
     content: none;
   }
   @top-right {
+    content: none;
+  }
+
+  @right-middle {
+    content: none;
+  }
+
+  @left-middle {
+    content: none;
+  }
+}
+
+.title {
+  page: title;
+}
+
+@page title {
+  margin: 0;
+  padding: 0;
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+
+  @right-middle {
+    content: none;
+  }
+
+  @left-middle {
     content: none;
   }
 }
@@ -128,6 +134,52 @@ html {
     content: none;
   }
   @top-right {
+    content: none;
+  }
+}
+
+.colophon {
+  page: colophon;
+}
+
+@page colophon {
+  margin: 0;
+  padding: 0;
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+
+  @right-middle {
+    content: none;
+  }
+
+  @left-middle {
+    content: none;
+  }
+}
+
+.backcover {
+  page: backcover;
+}
+
+@page backcover {
+  margin: 0;
+  padding: 0;
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+
+  @right-middle {
+    content: none;
+  }
+
+  @left-middle {
     content: none;
   }
 }
