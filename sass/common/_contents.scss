@@ -90,7 +90,11 @@ p > img, div > img, section > img {
 }
 
 /* 表紙 */
-
+.cover > img {
+  max-inline-size: 100%;
+  max-block-size: 100vb;
+  object-fit: contain;
+}
 
 /* 3行あける */
 .line-03 {
