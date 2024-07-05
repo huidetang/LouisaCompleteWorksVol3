@@ -87,7 +87,7 @@ jobs:
         env: 
           TZ: "Asia/Tokyo" # タイムゾーンを指定
         id: date
-        run: echo "::set-output name=date::$(date +'%Y年%m月%d日 %H時%M分')"
+        run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
              # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
@@ -114,7 +114,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'pdf-paper', steps.date.outputs.date) }}
+          name: ${{ format('るいざ第3集_{0}_{1}', 'pdf-paper', steps.date.outputs.date) }}
           path: book-print-pdf.pdf
   pdf-ebook:
     # needs: reviewdog-github-check
@@ -129,7 +129,7 @@ jobs:
         env: 
           TZ: "Asia/Tokyo" # タイムゾーンを指定
         id: date
-        run: echo "::set-output name=date::$(date +'%Y年%m月%d日 %H時%M分')"
+        run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
              # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
@@ -152,7 +152,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'pdf-ebook', steps.date.outputs.date) }}
+          name: ${{ format('るいざ第3集_{0}_{1}', 'pdf-ebook', steps.date.outputs.date) }}
           path: book-pdf-ebook.pdf
   epub:
     # needs: reviewdog-github-check
@@ -167,7 +167,7 @@ jobs:
         env: 
           TZ: "Asia/Tokyo" # タイムゾーンを指定
         id: date
-        run: echo "::set-output name=date::$(date +'%Y年%m月%d日 %H時%M分')"
+        run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
              # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
@@ -186,7 +186,7 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'epub', steps.date.outputs.date) }}
+          name: ${{ format('るいざ第3集_{0}_{1}', 'epub', steps.date.outputs.date) }}
           path: book-epub.epub
   vivliostyle:
     # needs: reviewdog-github-check
@@ -201,7 +201,7 @@ jobs:
         env: 
           TZ: "Asia/Tokyo" # タイムゾーンを指定
         id: date
-        run: echo "::set-output name=date::$(date +'%Y年%m月%d日 %H時%M分')"
+        run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
              # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
@@ -230,6 +230,6 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('louisa-novels-3rd-{0}_{1}', 'vivliostyle', steps.date.outputs.date) }}
+          name: ${{ format('るいざ第3集_{0}_{1}', 'vivliostyle', steps.date.outputs.date) }}
           path: book.pdf
         
