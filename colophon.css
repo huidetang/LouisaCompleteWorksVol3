@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 @page {
-    size: 105mm 148mm;
-    width: 105mm;
-    height: 148mm;
+    size: 1447px 2039px;
+    width: 1447px;
+    height: 2039px;
     margin: 0;
     marks: crop;
 }
