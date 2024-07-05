@@ -17,6 +17,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  set-time:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set current datetime as env variable
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+
+      - name: Show current datetime
+        run: echo ${{ env.CURRENT_DATETIME }}
+
   # reviewdog-github-check:
   #   name: reviewdog (github-check)
   #   runs-on: ubuntu-latest
@@ -61,6 +76,7 @@ jobs:
 
   paper:
     # needs: reviewdog-github-check
+    needs: set-time
     name: Make PDF for Paper
     runs-on: ubuntu-latest
     container:
@@ -95,6 +111,7 @@ jobs:
           path: book-print-pdf.pdf
   pdf-ebook:
     # needs: reviewdog-github-check
+    needs: set-time
     name: Make PDF for Ebook
     runs-on: ubuntu-latest
     container:
@@ -125,6 +142,7 @@ jobs:
           path: book-pdf-ebook.pdf
   epub:
     # needs: reviewdog-github-check
+    needs: set-time
     name: Make EPUB
     runs-on: ubuntu-latest
     container:
@@ -147,10 +165,11 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
-          name: book-epub_${{ env.CURRENT_DATETIME }}.epub
+          name: book-epub_${{ env.CURRENT_DATETIME }}.pdf
           path: book-epub.epub
   vivliostyle:
     # needs: reviewdog-github-check
+    needs: set-time
     name: Make PDF at Vivliostyle
     runs-on: ubuntu-latest
     container:
