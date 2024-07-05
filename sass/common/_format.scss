@@ -14,7 +14,8 @@ html {
 }
 
 @page {
-  size: $paper-width $paper-height;
+  size: $paper-size;
+  bleed: $bleed-size;
   // 行送り * 行数
   width: $content-width;
   // フォントサイズ * 文字数
@@ -51,6 +52,9 @@ html {
   }
 }
 
+@page :first { margin: 0 !important; }
+@page :last { margin: 0 !important; }
+
 @page :right {
 
   margin-left: $nodo;
@@ -83,6 +87,11 @@ html {
 }
 
 @page cover {
+  size: $paper-size;
+  bleed: $bleed-size;
+  width: $paper-width;
+  height: $paper-height;
+  marks: $marks;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
@@ -110,6 +119,11 @@ html {
 }
 
 @page title {
+  size: $paper-size;
+  bleed: $bleed-size;
+  width: $paper-width;
+  height: $paper-height;
+  marks: $marks;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
@@ -150,6 +164,10 @@ html {
 }
 
 @page colophon {
+  size: $paper-size;
+  width: $paper-width;
+  height: $paper-height;
+  marks: $marks;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
@@ -176,6 +194,11 @@ html {
 }
 
 @page backcover {
+  size: $paper-size;
+  bleed: $bleed-size;
+  width: $paper-width;
+  height: $paper-height;
+  marks: $marks;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   margin-right: 0 !important;
