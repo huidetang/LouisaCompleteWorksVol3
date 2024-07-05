@@ -4,4 +4,4 @@ bookname: book-epub
 coverimage: cover.png
 titlepage: true
 colophon: true
-backcover: backcover.png
+# backcover: backcover.png
