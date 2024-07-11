@@ -226,7 +226,7 @@ jobs:
       - name: Show .grayscaling.log
         run: cat .grayscaling.log
       - name: Build PDF.
-        run: REVIEW_CONFIG_FILE=config-vivliostyle.yml REVIEW_VSCLI_USESANDBOX=true bundle exec rake vivliostyle -p
+        run: REVIEW_CONFIG_FILE=config-vivliostyle.yml REVIEW_VSCLI_USESANDBOX=true bundle exec rake vivliostyle --press-ready
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
