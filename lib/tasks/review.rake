@@ -137,7 +137,7 @@ end
 
 desc 'build with vivliostyle'
 task 'vivliostyle:build': BOOK_EPUB do
-  sh "#{REVIEW_VSCLI} build #{REVIEW_VSCLI_USESANDBOX} #{REVIEW_VSCLI_OPTIONS} -o #{REVIEW_VSCLI_PDF} #{BOOK_EPUB}"
+  sh "#{REVIEW_VSCLI} build #{REVIEW_VSCLI_USESANDBOX} #{REVIEW_VSCLI_OPTIONS} --preflight press-ready --preflight-option gray-scale -o #{REVIEW_VSCLI_PDF} #{BOOK_EPUB}"
 end
 
 desc 'build with vivliostyle'
