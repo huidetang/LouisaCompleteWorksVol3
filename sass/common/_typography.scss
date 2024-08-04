@@ -53,7 +53,20 @@ h1 + h2 {
   margin-block-start: $base-line-height;
 }
 
-h2 {
+h3 {
+  /* フォント */
+  font-weight: normal;
+  /* フォントサイズ */
+  font-size: 1rem;
+  /* 字下げ */
+  text-indent: 6em;
+  /* 直後の改ページ・改段禁止 */
+  break-after: avoid;
+  // 2行取り
+  line-height: $base-line-height * 2;
+}
+
+h3 {
   /* フォント */
   font-weight: normal;
   /* フォントサイズ */

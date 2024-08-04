@@ -32,7 +32,7 @@ $paper-width: 105mm;
 //紙の縦幅
 $paper-height: 148mm;
 //トンボ
-$marks: crop;
+$marks: none;
 
 //コンテンツの横幅
 $content-width: $paper-width - $koguchi - $nodo;

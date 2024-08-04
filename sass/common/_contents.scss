@@ -130,6 +130,8 @@ pre {
 }
 
 ul, ol {
+  margin-block-start: $base-line-height;
+  margin-block-end: $base-line-height;
   padding-inline-start: 1.5em;
   margin-top: 1rem;
   margin-bottom: 1rem;
