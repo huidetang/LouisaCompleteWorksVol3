@@ -238,7 +238,7 @@ jobs:
     name: Make PDF at Vivliostyle
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/huideyeren/review-docker:main
+      image: debian:slim
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
