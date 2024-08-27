@@ -237,8 +237,6 @@ jobs:
     # needs: reviewdog-github-check
     name: Make PDF at Vivliostyle
     runs-on: ubuntu-latest
-    container:
-      image: debian:slim
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
