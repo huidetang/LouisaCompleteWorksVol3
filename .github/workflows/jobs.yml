@@ -236,7 +236,7 @@ jobs:
   vivliostyle-dockerfile:
     # needs: reviewdog-github-check
     name: Make PDF at Vivliostyle
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/huideyeren/vivliostyle-review-docker:5d69b10
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -248,9 +248,16 @@ jobs:
               # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
-      - name: Build Book
-        uses: ./.github/actions/
-        id: build-book
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Grayscaling images.
+        run: pip3 install anshitsu && pwd | python3 grayscaling.py >> .grayscaling.log
+      - name: Show .grayscaling.log
+        run: cat .grayscaling.log
+      - name: Build PDF.
+        run: REVIEW_CONFIG_FILE=config-vivliostyle.yml REVIEW_VSCLI_USESANDBOX=true bundle exec rake vivliostyle
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
