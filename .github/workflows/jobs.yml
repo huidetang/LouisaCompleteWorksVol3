@@ -116,44 +116,44 @@ jobs:
         with:
           name: ${{ format('るいざ第3集_{0}_{1}', 'pdf-paper', steps.date.outputs.date) }}
           path: book-print-pdf.pdf
-  pdf-ebook:
-    # needs: reviewdog-github-check
-    name: Make PDF for Ebook
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/huideyeren/review-docker:main
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: Get current date and time
-        env: 
-          TZ: "Asia/Tokyo" # タイムゾーンを指定
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
-             # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
-      - name: Show date and time
-        run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
-      - name: Install gems.
-        run: bundle install
-      - name: Copy plantuml.
-        run: cp /java/plantuml.jar .
-      - name: Check tools
-        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
-      - name: convert PlantUML
-        run: pwd | bash ./plantuml.sh >> .plantuml.log
-      - name: Show .plantuml.log
-        run: cat .plantuml.log
-      - name: Convert SVG to PDF
-        run: pwd | python3 svg.py >> .svg.log
-      - name: Show .svg.log
-        run: cat .svg.log
-      - name: Build PDF.
-        run: REVIEW_CONFIG_FILE=config-ebook-pdf.yml bundle exec rake pdf
-      - name: Upload artifact.
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ format('るいざ第3集_{0}_{1}', 'pdf-ebook', steps.date.outputs.date) }}
-          path: book-pdf-ebook.pdf
+  # pdf-ebook:
+  #   # needs: reviewdog-github-check
+  #   name: Make PDF for Ebook
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: ghcr.io/huideyeren/review-docker:main
+  #   steps:
+  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #     - uses: actions/checkout@v3
+  #     - name: Get current date and time
+  #       env: 
+  #         TZ: "Asia/Tokyo" # タイムゾーンを指定
+  #       id: date
+  #       run: echo "::set-output name=date::$(date +'%Y年%m月%d日_%H時%M分')"
+  #            # '%Y-%m-%d %H:%M'の部分を書き換えれば、任意の表示に変更できる。
+  #     - name: Show date and time
+  #       run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
+  #     - name: Install gems.
+  #       run: bundle install
+  #     - name: Copy plantuml.
+  #       run: cp /java/plantuml.jar .
+  #     - name: Check tools
+  #       run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+  #     - name: convert PlantUML
+  #       run: pwd | bash ./plantuml.sh >> .plantuml.log
+  #     - name: Show .plantuml.log
+  #       run: cat .plantuml.log
+  #     - name: Convert SVG to PDF
+  #       run: pwd | python3 svg.py >> .svg.log
+  #     - name: Show .svg.log
+  #       run: cat .svg.log
+  #     - name: Build PDF.
+  #       run: REVIEW_CONFIG_FILE=config-ebook-pdf.yml bundle exec rake pdf
+  #     - name: Upload artifact.
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: ${{ format('るいざ第3集_{0}_{1}', 'pdf-ebook', steps.date.outputs.date) }}
+  #         path: book-pdf-ebook.pdf
   epub:
     # needs: reviewdog-github-check
     name: Make EPUB
@@ -188,6 +188,7 @@ jobs:
         with:
           name: ${{ format('るいざ第3集_{0}_{1}', 'epub', steps.date.outputs.date) }}
           path: book-epub.epub
+
   vivliostyle:
     # needs: reviewdog-github-check
     name: Make PDF at Vivliostyle
