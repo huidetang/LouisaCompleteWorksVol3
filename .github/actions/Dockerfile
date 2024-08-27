@@ -34,7 +34,7 @@ RUN apt update && \
                        cron \
                        libcairo2-dev \
                        libffi-dev \
-                       zlib1g-dev && \
+                       zlib1g-dev \
                        libatk-bridge2.0-0 \
                        libgtk-3-0 \
                        libasound2 \
