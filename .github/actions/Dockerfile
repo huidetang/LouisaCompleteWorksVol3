@@ -70,5 +70,5 @@ RUN echo 'gem: --no-rdoc --no-ri' >> /.gemrc && \
 
 RUN pnpm install
 RUN pnpm run style
-RUN REVIEW_CONFIG_FILE=config-vivliostyle.yml REVIEW_VSCLI_USESANDBOX=true bundle exec rake vivliostyle
+ENTRYPOINT ["./entrypoint.sh"]
 

@@ -1,0 +1,5 @@
+name: 'build-book'
+description: 'Build Book by Vivliostyle'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
