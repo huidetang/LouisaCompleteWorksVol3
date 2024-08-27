@@ -249,7 +249,7 @@ jobs:
       - name: Show date and time
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
       - name: Build Book
-        uses: ./
+        uses: ./.github/actions/
         id: build-book
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
