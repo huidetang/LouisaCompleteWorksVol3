@@ -254,7 +254,7 @@ jobs:
         uses: ./
         id: build-book
       - name: Upload artifact.
-      uses: actions/upload-artifact@v3
-      with:
-        name: ${{ format('るいざ第3集_{0}_{1}', 'vivliostyle-docker', steps.date.outputs.date) }}
-        path: book.pdf
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('るいざ第3集_{0}_{1}', 'vivliostyle-docker', steps.date.outputs.date) }}
+          path: book.pdf
