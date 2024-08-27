@@ -237,7 +237,9 @@ jobs:
   vivliostyle-dockerfile:
     # needs: reviewdog-github-check
     name: Make PDF at Vivliostyle
-    runs-on: ghcr.io/huideyeren/vivliostyle-review-docker
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/huideyeren/vivliostyle-review-docker:main
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
