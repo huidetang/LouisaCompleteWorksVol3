@@ -133,9 +133,26 @@ html {
   }
 }
 
-// .title {
-//   page: title;
-// }
+.title {
+  page: title;
+}
+
+@page title {
+  width: 100% !important;
+  height: 100% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+
+  @top-left {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
 
 // @page title {
 //   size: $paper-size;
@@ -178,26 +195,25 @@ html {
   }
 }
 
-// .colophon {
-//   page: colophon;
-// }
+.colophon {
+  page: colophon;
+}
 
-// @page colophon {
-//   size: $paper-size;
-//   width: $paper-width;
-//   height: $paper-height;
-//   marks: $marks;
-//   margin-top: 0 !important;
-//   margin-bottom: 0 !important;
-//   margin-right: 0 !important;
-//   margin-left: 0 !important;
+@page colophon {
+  width: 100% !important;
+  height: 100% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 
-//   @top-left {
-//     content: none;
-//   }
-//   @top-right {
-//     content: none;
-//   }
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}
 
 //   @right-middle {
 //     content: none;
@@ -206,11 +222,27 @@ html {
 //   @left-middle {
 //     content: none;
 //   }
-// }
 
-// .backcover {
-//   page: backcover;
-// }
+
+.backcover {
+  page: backcover;
+}
+
+@page backcover {
+  width: 100% !important;
+  height: 100% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}
 
 // @page backcover {
 //   size: $paper-size;
