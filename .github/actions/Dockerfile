@@ -53,6 +53,10 @@ RUN apt update && \
 RUN curl https://get.volta.sh | bash &&\
     volta install node@lts pnpm@latest
 
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
 RUN pnpm install -g @vivliostyle/cli
 
 RUN git clone https://github.com/neologd/mecab-ipadic-neologd.git && \
