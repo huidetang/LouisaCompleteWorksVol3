@@ -3,17 +3,8 @@ RUN pip3 install anshitsu
 RUN python3 svg.py
 RUN python3 grayscaling.py
 
-FROM node:slim as node
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-
 FROM ruby:slim as base
-COPY --from=node /usr/local/bin/node /usr/local/bin
-COPY --from=node /pnpm /pnpm
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+ENV VOLTA_HOME=/usr/local
 RUN apt update && \
     apt install -y autoconf \ 
                        bison \
@@ -58,6 +49,11 @@ RUN apt update && \
                        graphviz \
                        poppler-utils && \
                        apt clean
+
+RUN curl https://get.volta.sh | bash &&\
+    volta install node@lts pnpm@latest
+
+RUN pnpm install -g @vivliostyle/cli
 
 RUN git clone https://github.com/neologd/mecab-ipadic-neologd.git && \
     cd mecab-ipadic-neologd && \
