@@ -262,7 +262,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Grayscaling images.
-        run: pip3 install anshitsu && pwd | python3 grayscaling.py >> .grayscaling.log
+        run: pip install anshitsu && pwd | python grayscaling.py >> .grayscaling.log
       - name: Show .grayscaling.log
         run: cat .grayscaling.log
       - name: Build PDF.
