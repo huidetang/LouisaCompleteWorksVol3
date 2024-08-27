@@ -236,7 +236,7 @@ jobs:
 
   vivliostyle-dockerfile:
     # needs: reviewdog-github-check
-    name: Make PDF at Vivliostyle
+    name: Make PDF at Vivliostyle Renew
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/huideyeren/vivliostyle-review-docker:main
