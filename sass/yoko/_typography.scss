@@ -2,7 +2,7 @@
 
 html {
   /* フォント */
-  font-family: $base-font-family;
+  font-family: 'Commissioner', 'Yakumono', "Noto Sans CJK jp", "Cica", sans-serif;
   font-weight: normal;
   /* 行末揃え */
   text-align: justify;
@@ -14,7 +14,7 @@ html {
 
 h1 {
   /* フォント */
-  font-weight: bold;
+  font-weight: 700;
   /* フォントサイズ */
   font-size: 1.35rem;
   /* 字下げ */
@@ -37,11 +37,9 @@ h1.short {
 
 h2 {
   /* フォント */
-  font-weight: normal;
+  font-weight: 700;
   /* フォントサイズ */
   font-size: 1.18rem;
-  /* 字下げ */
-  text-indent: 6em;
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   // 2行取り
@@ -55,24 +53,9 @@ h1 + h2 {
 
 h3 {
   /* フォント */
-  font-weight: normal;
+  font-weight: 700;
   /* フォントサイズ */
   font-size: 1rem;
-  /* 字下げ */
-  text-indent: 6em;
-  /* 直後の改ページ・改段禁止 */
-  break-after: avoid;
-  // 2行取り
-  line-height: $base-line-height * 2;
-}
-
-h3 {
-  /* フォント */
-  font-weight: normal;
-  /* フォントサイズ */
-  font-size: 1rem;
-  /* 字下げ */
-  text-indent: 8em;
   /* 直後の改ページ・改段禁止 */
   break-after: avoid;
   // 2行取り
@@ -99,11 +82,6 @@ p {
   &.flushright {
     text-align: right;
   }
-}
-
-/* 縦中横 */
-.tcy {
-  text-combine-upright: all;
 }
 
 /* 圏点（ゴマ） */

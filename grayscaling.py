@@ -2,7 +2,7 @@ import glob
 from os import getcwd
 from os.path import join
 
-from anshitsu.retouch import Retouch
+from anshitsu.process.processor import Processor
 
 from PIL import Image
 
@@ -18,7 +18,7 @@ def grayscaling(path: str):
         Image: 与えられたパスの画像をグレースケール化したもの
     """
     image = Image.open(path)
-    retouch = Retouch(image, grayscale=True)
+    retouch = Processor(image, grayscale=True)
     gray_image = retouch.process()
     return gray_image
 

@@ -3,18 +3,18 @@
 /* EB Garamond Variable */
 
 @font-face {
-  font-family: 'EB Garamond Variable';
+  font-family: 'Alegreya';
   font-style: normal;
   font-display: swap;
   font-weight: 400 700;
-  src: url(./fonts/EBGaramond/EBGaramond-VariableFont_wght.ttf) format('truetype');
+  src: url(./fonts/Alegreya/Alegreya-VariableFont_wght.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'EB Garamond Variable';
+  font-family: 'Alegreya';
   font-style: italic;
   font-weight: 400 700;
-  src: url(./fonts/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf) format('truetype');
+  src: url(./fonts/Alegreya/Alegreya-Italic-VariableFont_wght.ttf) format('truetype');
 }
 
 /* Nanum Myeongjo */
@@ -57,4 +57,38 @@
 @font-face {
     font-family: 'Yakumono';
     src: url(./fonts/YakuCalt/YakuCaltMincho-R.woff) format("woff");
+}
+
+/* 等幅フォント・絵文字用（Cicaフォント） https://github.com/miiton/Cica */
+
+@font-face {
+    font-family: 'Cica';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    src: url(./fonts/Cica/Cica-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Cica';
+    font-style: Italic;
+    font-display: swap;
+    font-weight: 700;
+    src: url(./fonts/Cica/Cica-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Cica';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(./fonts/Cica/Cica-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Cica';
+    font-style: Italic;
+    font-display: swap;
+    font-weight: 400;
+    src: url(./fonts/Cica/Cica-RegularItalic.ttf) format('truetype');
 }
