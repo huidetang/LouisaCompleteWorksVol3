@@ -7,7 +7,7 @@ direction: "ltr"
 
 # 表紙を作る
 cover: cover.xhtml
-coverimage: frontcover.png
+coverimage: cover.png
 epubmaker:
   cover_linear: yes
 
