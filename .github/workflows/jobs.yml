@@ -248,7 +248,7 @@ jobs:
       - name: PDFの生成
         run: REVIEW_CONFIG_FILE=config-udonbook-${{ env.MUKI }}.yml REVIEW_VSCLI_USESANDBOX=true REVIEW_VSCLI_OPTIONS="--timeout 900" bundle exec rake vivliostyle
       - name: 画像の生成
-        run: mkdir distimages && cp book.pdf images/frontcover.png images/backcover.png ./distimages && cd ./distimages && pdftoppm -png book.pdf dist -scale-to-x 726 -scale-to-y 1024 && cd .. && ls -la ./distimages
+        run: mkdir distimages && cp book.pdf images/cover.png images/backcover.png ./distimages && cd ./distimages && pdftoppm -png book.pdf dist -scale-to-x 726 -scale-to-y 1024 && cd .. && ls -la ./distimages
       - name: 成果物のアップロード
         uses: actions/upload-artifact@v4
         with:
